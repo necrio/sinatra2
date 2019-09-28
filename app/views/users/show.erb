@@ -1,0 +1,11 @@
+<h1> Your equipment list</h1>
+<p> This is your equipment list, <%= @user.username %></p>
+<% current_user.equipment.each do |equip| %>
+  <ul>
+      <li><a href="/equipment/<%=equipment.id%>"><%= equipment.title %> - <% equipment.author %></a>
+  </ul>
+  <% end %>
+  <br>
+  <a href="/equipment/new">Add more equipment</a>
+  <br>
+  <a href="/logout">Logout</a>
