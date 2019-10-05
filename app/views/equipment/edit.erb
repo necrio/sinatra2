@@ -1,0 +1,17 @@
+<h2>Edit Equipment Info:</h2>
+<br>
+<form action="/equipment/<%=@equipment.id%>" method="POST">
+<input id="hidden" type="hidden" name="_method" value="PATCH">
+  <label for="equipment_name">Name:</label><br>
+  <input type="text" name="book[name]" value="<%= @equipment.name %>"><br>
+  <input type="submit" value="Update equipment Info">
+</form>
+<br>
+<br>
+  <form action="/equipment/<%=@equipment.id%>/delete" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Equipment">
+  </form>
+<br>
+<a class="button" href="/books">Back to My Equipment</a><br>
+<a href="/logout">Log Out</a>

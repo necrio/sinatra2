@@ -1,0 +1,12 @@
+<h2>View Your equipment:</h2>
+<h3><a><%= @equipment.name %></a></h3>
+<a href="/books/<%= @equipment.id %>/edit">Edit Equipment</a>
+<br>
+<br>
+  <form action="/equipments/<%=@equipment.id%>/delete" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Equipment">
+  </form>
+<br>
+<a class="button" href="/equipments">Back to Your list</a><br>
+<a class="button" href="/logout">Log Out</a>

@@ -1,4 +1,4 @@
-Class UserController < ApplicationController
+class UsersController < ApplicationController
 
 get '/users/:id' do
   redirect_if_not_logged_in
@@ -58,4 +58,5 @@ get 'logout' do
   else
     redirect '/'
   end
-end 
+end
+end

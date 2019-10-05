@@ -1,4 +1,4 @@
-class User < Activerecord::Base
+class User < ActiveRecord::Base
   has_secure_password
-  has_many :equipment
-end 
+  has_many :equipments
+end

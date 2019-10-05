@@ -1,0 +1,14 @@
+<h1>Welcome, <%= current_user.username %></h1>
+<br>
+<h2>This is your list of equipment:</h2>
+<p>Click on something to edit  or Delete:</p>
+
+<% current_user.equipments.each do |equip| %>
+  <ul>
+    <li><a href="/equipment/<%=equipment.id%>"></a></li>
+  </ul>
+<% end %>
+
+<br>
+<a href="/books/new">Add New Book</a><br>
+<a href="/logout">Log Out</a>
