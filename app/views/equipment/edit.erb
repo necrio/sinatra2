@@ -3,7 +3,7 @@
 <form action="/equipment/<%=@equipment.id%>" method="POST">
 <input id="hidden" type="hidden" name="_method" value="PATCH">
   <label for="equipment_name">Name:</label><br>
-  <input type="text" name="book[name]" value="<%= @equipment.name %>"><br>
+  <input type="text" name="equipment[name]" value="<%= @equipment.name %>"><br>
   <input type="submit" value="Update equipment Info">
 </form>
 <br>

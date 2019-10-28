@@ -15,14 +15,15 @@ class EquipmentController < ApplicationController
 
   post '/equipment' do
     if logged_in?
-      if params["equipment"] == ""
+      if params["equipment"]["name"] == ""
         flash[:message] = "Please fill in all fields."
         redirect to '/equipment/new'
       else
         @user = current_user
-        @equipment = Equipment.create(title: params["equipment"], user_id: session[:user_id])
+       #  @book = Book.create(title: params["book"]["title"], author: params["book"]["author"], user_id: session[:user_id])
+        @equipment = Equipment.create(name: params["equipment"]["name"], user_id: session[:user_id])
         if @equipment.save
-          @user.equipments << @equipment
+          @user.equipment << @equipment
           redirect to '/equipment'
         else
           redirect to '/equipment/new'
@@ -49,14 +50,14 @@ class EquipmentController < ApplicationController
     end
   end
 
-  patch '/equipments/:id' do
+  patch '/equipment/:id' do
     redirect_if_not_logged_in
-    if params["equipment"] == ""
+    if params["equipment"]["name"] == ""
       redirect to '/equipment/:id/edit'
     else
       @equipment = Equipment.find_by(id: params[:id])
         if @equipment && @equipment.user == current_user
-          if @equipment.update(equipment: params["equipment"])
+          if @equipment.update(equipment: params["equipment"]["name"])
             flash[:message] = "Equipment updated!"
             redirect to '/equipment'
           else

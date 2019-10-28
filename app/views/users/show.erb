@@ -2,7 +2,7 @@
 <p> This is your equipment list, <%= @user.username %></p>
 <% current_user.equipment.each do |equip| %>
   <ul>
-      <li><a href="/equipment/<%=equipment.id%>"><%= equipment.title %> - <% equipment.author %></a>
+      <li><a href="/equipment/<%=equipment.id%>"><%= equipment.name %> - <% equipment.author %></a>
   </ul>
   <% end %>
   <br>

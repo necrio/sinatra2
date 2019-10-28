@@ -29,12 +29,12 @@ helpers do
     !!current_user
   end
 
-  def redirect
-    if !logged_in?
-      flash[:message] = "You must be logged in."
-      redirect to '/login'
-    end
-  end
+  def redirect_if_not_logged_in
+        if !logged_in?
+          flash[:message] = "You must be logged in to view that page."
+          redirect to '/login'
+        end
+      end
 end
 
 end
